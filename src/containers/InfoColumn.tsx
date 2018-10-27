@@ -1,4 +1,4 @@
-import {Grid, List, ListItem, ListItemText} from 'material-ui';
+import {Grid, List, ListItem, ListItemText} from '@material-ui/core';
 import * as React from 'react';
 import {IModuleParams, IModuleVersion} from '../components/EbyteClass';
 

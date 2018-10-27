@@ -19,13 +19,13 @@
   },
   "dependencies": {
     "@types/electron-devtools-installer": "^2.2.0",
-    "@types/react": "^16.4.15",
-    "@types/react-dom": "^16.0.8",
+    "@types/react": "^16.4.18",
+    "@types/react-dom": "^16.0.9",
     "electron-compile": "^6.4.3",
     "electron-devtools-installer": "^2.2.4",
-    "material-ui": "^1.0.0-beta.40",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "@material-ui/core": "^3.3.1",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-hot-loader": "^4.3.11",
     "serialport": "^7.0.2",
     "tslib": "^1.9.3"
@@ -36,8 +36,8 @@
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "electron-forge": "^5.2.2",
-    "electron-prebuilt-compile": "1.8.4",
+    "electron-prebuilt-compile": "3.0.6",
     "tslint": "^5.11.0",
-    "typescript": "~3.1.1"
+    "typescript": "~3.1.3"
   }
 }
