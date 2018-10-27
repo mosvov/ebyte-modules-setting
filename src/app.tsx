@@ -1,8 +1,11 @@
-import {remote} from 'electron';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Icon from '@material-ui/core/Icon';
+import Paper from '@material-ui/core/Paper/Paper';
+import Snackbar from '@material-ui/core/Snackbar/Snackbar';
+import {remote, OpenDialogOptions} from 'electron';
 import * as  fs from 'fs';
-import {Button, Grid, Icon, Paper, Snackbar} from 'material-ui';
 import * as React from 'react';
-
 import EbyteClass, {IModuleParams, IModuleVersion} from './components/EbyteClass';
 import SerialPortClass from './components/SerialPortClass';
 import InfoColumn from './containers/InfoColumn';
@@ -90,13 +93,13 @@ export class App extends React.Component<{}, IAppState> {
     }
 
     onImportParamsClick = () => {
-        const options = {
+        const options: OpenDialogOptions = {
             title: 'Get params from file:',
             filters: [{name: 'text', extensions: ['txt']}],
             properties: ['openFile']
         };
 
-        dialog.showOpenDialog(options, (filePaths: string) => {
+        dialog.showOpenDialog(options, (filePaths: string[]) => {
             if (!filePaths || filePaths.length !== 1) {
                 return;
             }
@@ -162,9 +165,9 @@ export class App extends React.Component<{}, IAppState> {
                     anchorOrigin={{vertical: 'top', horizontal: 'right'}}
                     open={this.state.snackBarOpen}
                     onClose={this.handleSnackBarClose}
-                    SnackbarContentProps={{
+                    /*SnackbarContentProps={{
                         'aria-describedby': 'message-id',
-                    }}
+                    }}*/
                     action={
                         <Button color='inherit' size='small' onClick={this.handleSnackBarClose}>
                             <Icon>clear</Icon>

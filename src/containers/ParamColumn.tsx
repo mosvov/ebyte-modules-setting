@@ -1,4 +1,4 @@
-import {Grid, MenuItem, TextField} from 'material-ui';
+import {Grid, MenuItem, TextField} from '@material-ui/core';
 import * as React from 'react';
 import EbyteClass, {IModuleParams} from '../components/EbyteClass';
 
