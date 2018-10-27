@@ -3,7 +3,7 @@ import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 import Paper from '@material-ui/core/Paper/Paper';
 import Snackbar from '@material-ui/core/Snackbar/Snackbar';
-import {remote, OpenDialogOptions} from 'electron';
+import {OpenDialogOptions, remote} from 'electron';
 import * as  fs from 'fs';
 import * as React from 'react';
 import EbyteClass, {IModuleParams, IModuleVersion} from './components/EbyteClass';
