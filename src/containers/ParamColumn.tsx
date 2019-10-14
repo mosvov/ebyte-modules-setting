@@ -28,7 +28,7 @@ export class ParamColumn extends React.Component<IParamProps, {}> {
         const {moduleParams} = this.props;
 
         return (
-            <Grid container spacing={24}>
+            <Grid container spacing={2}>
                 <Grid item xs={3} sm={3}>
                     <TextField
                         name='baudRate'
