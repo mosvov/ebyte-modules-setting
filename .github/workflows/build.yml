@@ -22,6 +22,8 @@ jobs:
         with:
           node-version: 12
 
+      - run: yarn install
+
       - name: Build Electron app
         run: yarn run make
 
