@@ -2,8 +2,8 @@ language: node_js
 node_js: '10'
 
 os:
-- linux
-- osx
+  - linux
+  - osx
 dist: trusty
 osx_image: xcode8.3
 sudo: false
@@ -11,17 +11,17 @@ sudo: false
 cache:
   yarn: true
   directories:
-  - node_modules
-  - $HOME/.cache/electron
-  - $HOME/.electron
-  - $HOME/.cache
+    - node_modules
+    - $HOME/.cache/electron
+    - $HOME/.electron
+    - $HOME/.cache
 
 addons:
   apt:
     packages:
-    - fakeroot
-    - rpm
+      - fakeroot
+      - rpm
 
 script:
-- npm run lint
-- npm run publish
+  - npm run lint
+  - npm run publish

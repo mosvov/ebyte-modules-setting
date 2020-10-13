@@ -1,38 +1,62 @@
 module.exports = {
-    "make_targets": {
-        "win32": [
-            "squirrel"
-        ],
-        "darwin": [
-            "dmg"
-        ],
-        "linux": [
-            "deb",
-            "rpm"
-        ]
+  packagerConfig: {
+    packageManager: 'yarn',
+    icon: './src/icons/serial_config',
+    dir: './src',
+  },
+  makers: [
+    {
+      name: '@electron-forge/maker-dmg',
+      config: {
+        icon: './src/icons/serial_config.icns',
+      },
     },
-    "electronPackagerConfig": {
-        "packageManager": "yarn",
-        "icon": "./src/icons/serial_config",
-        "dir": "./src"
+    {
+      name: '@electron-forge/maker-squirrel',
+      config: {
+        name: 'ebyte_modules_setting',
+      },
     },
-    "electronWinstallerConfig": {
-        "name": "ebyte_modules_setting"
+    {
+      name: '@electron-forge/maker-deb',
+      config: {},
     },
-    "electronInstallerDMG": {
-        "icon": "./src/icons/serial_config.icns"
+    {
+      name: '@electron-forge/maker-rpm',
+      config: {},
     },
-    "electronInstallerDebian": {},
-    "electronInstallerRedhat": {},
-    "github_repository": {
-        "owner": "mosvov",
-        "name": "ebyte-modules-setting",
-        "options": {
-            "host": 'api.github.com',
-        }
+  ],
+  publishes: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'mosvov',
+          name: 'ebyte-modules-setting',
+          options: {
+            host: 'api.github.com',
+          },
+        },
+        prerelease: true,
+      },
     },
-    "windowsStoreConfig": {
-        "packageName": "",
-        "name": "ebytemodulessetting"
-    }
-}
+  ],
+  plugins: [
+    [
+      '@electron-forge/plugin-webpack',
+      {
+        mainConfig: './webpack/webpack.main.config.js',
+        renderer: {
+          config: './webpack/webpack.renderer.config.js',
+          entryPoints: [
+            {
+              html: './src/index.html',
+              js: './src/renderer.tsx',
+              name: 'main_window',
+            },
+          ],
+        },
+      },
+    ],
+  ],
+};
