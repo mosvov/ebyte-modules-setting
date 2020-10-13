@@ -1,4 +1,5 @@
 # Ebyte modules setting
+
 Cross platform application to edit settings of Ebyte RF modules
 
 ![Screen shot](https://i.imgur.com/Jphsrus.png)
@@ -9,10 +10,10 @@ Download the latest version of configurator from the [GitHub releases page.](htt
 
 ## Build status
 
-|Platform|Build status|
-|---|---|
-|Windows|[![Build status](https://ci.appveyor.com/api/projects/status/m3f2kakkywww12cq?svg=true)](https://ci.appveyor.com/project/mosvov/ebyte-modules-setting)||
-|macOS/Linux|![Build status](https://api.travis-ci.org/mosvov/ebyte-modules-setting.svg?branch=master)|
+| Platform          | Build status                                                                                                    |
+| ----------------- | --------------------------------------------------------------------------------------------------------------- |
+| CI                | ![CI](https://github.com/mosvov/ebyte-modules-setting/workflows/CI/badge.svg?branch=master)                     |
+| Build and Release | ![Build and Release](https://github.com/mosvov/ebyte-modules-setting/workflows/Build%20and%20Release/badge.svg) |
 
 ## Development
 
@@ -37,7 +38,9 @@ $ npm run make
 ```
 
 ## Contribution
+
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Contributions of any kind welcome!
 
 ## License
+
 Licensed under the [MIT](LICENSE) License.
