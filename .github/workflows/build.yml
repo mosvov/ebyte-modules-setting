@@ -1,4 +1,4 @@
-name: Build
+name: Build and Release
 on:
   pull_request:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 jobs:
-  release:
+  build:
     runs-on: ${{ matrix.os }}
 
     strategy:
@@ -43,3 +43,24 @@ jobs:
           name: build-${{ matrix.os }}
           path: out
 
+  release:
+    name: Create Release
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+      - name: Upload to Release
+        uses: meeDamian/github-release@2.0
