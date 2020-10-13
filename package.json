@@ -9,8 +9,8 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "eslint .",
-    "prettier": "prettier --check ."
+    "lint": "eslint src",
+    "prettier": "prettier --check src"
   },
   "keywords": [],
   "author": "mosvov",
@@ -47,6 +47,7 @@
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-react": "^7.21.4",
     "fork-ts-checker-webpack-plugin": "^5.0.14",
     "node-loader": "^1.0.1",
     "prettier": "2.1.2",
