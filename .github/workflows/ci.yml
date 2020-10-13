@@ -3,31 +3,31 @@ on:
   pull_request:
 
 jobs:
-  name: Test
-  runs-on: ubuntu-latest
+  checks:
+    runs-on: ubuntu-latest
 
-  steps:
-    - name: Checkout
-      uses: actions/checkout@v1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
 
-    - name: Get yarn cache
-      id: yarn-cache
-      run: echo "::set-output name=dir::$(yarn cache dir)"
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
 
-    - uses: actions/cache@v1
-      with:
-        path: ${{ steps.yarn-cache.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-yarn-
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
-    - uses: actions/setup-node@v1.1.0
-      with:
-        node-version: 12
+      - uses: actions/setup-node@v1.1.0
+        with:
+          node-version: 12
 
-    - run: yarn install
+      - run: yarn install
 
-    - run: yarn lint
-    - run: yarn prettier
-    - run: yarn tsc
-    - run: yarn make
+      - run: yarn lint
+      - run: yarn prettier
+      - run: yarn tsc
+      - run: yarn make
