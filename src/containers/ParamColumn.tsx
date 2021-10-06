@@ -44,9 +44,10 @@ export class ParamColumn extends React.Component<IParamProps, {}> {
             <MenuItem value={1}>2400bps</MenuItem>
             <MenuItem value={2}>4800bps</MenuItem>
             <MenuItem value={3}>9600bps</MenuItem>
-            <MenuItem value={4}>38400bps</MenuItem>
-            <MenuItem value={5}>57600bps</MenuItem>
-            <MenuItem value={6}>115200bps</MenuItem>
+            <MenuItem value={4}>19200bps</MenuItem>
+            <MenuItem value={5}>38400bps</MenuItem>
+            <MenuItem value={6}>57600bps</MenuItem>
+            <MenuItem value={7}>115200bps</MenuItem>
           </TextField>
         </Grid>
 
