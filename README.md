@@ -28,13 +28,13 @@ $ yarn
 ### Run
 
 ```
-$ npm run start
+$ yarn run start
 ```
 
 ### Package
 
 ```
-$ npm run make
+$ yarn run make
 ```
 
 ## Contribution

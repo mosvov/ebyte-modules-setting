@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
     "allowJs": true,
-    "lib": ["es6", "dom"],
     "module": "commonjs",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "noImplicitAny": true,
-    "noImplicitThis": true,
-    "strictNullChecks": true,
     "sourceMap": true,
     "baseUrl": ".",
     "outDir": "dist",

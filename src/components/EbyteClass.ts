@@ -24,7 +24,7 @@ export interface IModuleParams {
 
 export default class EbyteClass {
   port: SerialPort;
-  buffer: Buffer;
+  buffer?: Buffer;
   onError: (errorMessage: string) => void;
 
   onVersion: (version: IModuleVersion) => void;
