@@ -3,8 +3,9 @@ import Grid from '@material-ui/core/Grid';
 import Icon from '@material-ui/core/Icon';
 import Paper from '@material-ui/core/Paper/Paper';
 import Snackbar from '@material-ui/core/Snackbar/Snackbar';
-import { OpenDialogOptions, remote } from 'electron';
-import * as fs from 'fs';
+import { OpenDialogOptions } from 'electron';
+import { dialog } from '@electron/remote';
+import fs from 'fs';
 import React from 'react';
 import EbyteClass, { IModuleParams, IModuleVersion } from './components/EbyteClass';
 import SerialPortClass from './components/SerialPortClass';
@@ -12,7 +13,6 @@ import InfoColumn from './containers/InfoColumn';
 import { ParamColumn } from './containers/ParamColumn';
 import SerialColumn from './containers/SerialColumn';
 
-const { dialog } = remote;
 const styles = {
   root: {
     flexGrow: 1,
