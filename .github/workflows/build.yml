@@ -68,3 +68,4 @@ jobs:
           tag: ${{ github.ref }}
           token: ${{ secrets.GITHUB_TOKEN }}
           files: ${{steps.download.outputs.download-path}}
+          allow_override: true
