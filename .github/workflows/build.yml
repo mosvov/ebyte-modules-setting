@@ -28,9 +28,9 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - uses: actions/setup-node@v1.1.0
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
 
       - run: yarn install
 
@@ -50,21 +50,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+
+      - name: Download artifacts
+        id: download
+        uses: actions/download-artifact@v2
+
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
+          draft: ${{ github.event_name == 'pull_request' }}
           prerelease: false
-      - name: Download artifacts
-        uses: actions/download-artifact@v2
-      - name: Upload to Release
-        uses: meeDamian/github-release@2.0
-        with:
-          tag: ${{ github.ref }}
-          token: ${{ secrets.GITHUB_TOKEN }}
-          files: ${{steps.download.outputs.download-path}}
+          files: |
+            ${{steps.download.outputs.download-path}}/**/*.deb
+            ${{steps.download.outputs.download-path}}/**/*.rpm
+            ${{steps.download.outputs.download-path}}/**/*.nupkg
+            ${{steps.download.outputs.download-path}}/**/*.exe

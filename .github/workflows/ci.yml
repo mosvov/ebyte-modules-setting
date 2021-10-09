@@ -21,12 +21,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-
 
-      - uses: actions/setup-node@v1.1.0
+      - uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
 
       - run: yarn install
-
       #- run: yarn lint
       - run: yarn prettier
       - run: yarn tsc

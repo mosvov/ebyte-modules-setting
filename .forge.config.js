@@ -26,21 +26,18 @@ module.exports = {
       config: {},
     },
   ],
-  publishes: [
+  /*publishes: [
     {
       name: '@electron-forge/publisher-github',
       config: {
         repository: {
           owner: 'mosvov',
           name: 'ebyte-modules-setting',
-          options: {
-            host: 'api.github.com',
-          },
         },
         prerelease: true,
       },
     },
-  ],
+  ],*/
   plugins: [
     [
       '@electron-forge/plugin-webpack',
