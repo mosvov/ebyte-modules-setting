@@ -33,9 +33,6 @@ module.exports = {
         repository: {
           owner: 'mosvov',
           name: 'ebyte-modules-setting',
-          options: {
-            host: 'api.github.com',
-          },
         },
         prerelease: true,
       },
