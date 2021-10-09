@@ -62,4 +62,8 @@ jobs:
           tag_name: ${{ github.ref }}
           draft: ${{ github.event_name == 'pull_request' }}
           prerelease: false
-          files: /home/runner/work/ebyte-modules-setting/ebyte-modules-setting/**
+          files: |
+            ${{steps.download.outputs.download-path}}/**/*.deb
+            ${{steps.download.outputs.download-path}}/**/*.rpm
+            ${{steps.download.outputs.download-path}}/**/*.nupkg
+            ${{steps.download.outputs.download-path}}/**/*.exe
