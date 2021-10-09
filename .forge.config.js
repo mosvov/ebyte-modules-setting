@@ -26,7 +26,7 @@ module.exports = {
       config: {},
     },
   ],
-  publishes: [
+  /*publishes: [
     {
       name: '@electron-forge/publisher-github',
       config: {
@@ -37,7 +37,7 @@ module.exports = {
         prerelease: true,
       },
     },
-  ],
+  ],*/
   plugins: [
     [
       '@electron-forge/plugin-webpack',
